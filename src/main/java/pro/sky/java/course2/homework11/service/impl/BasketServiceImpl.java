@@ -1,29 +1,25 @@
 package pro.sky.java.course2.homework11.service.impl;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
+import pro.sky.java.course2.homework11.data.Order;
 import pro.sky.java.course2.homework11.service.BasketService;
 
 import java.util.*;
 
 @Service
-@SessionScope
 public class BasketServiceImpl implements BasketService {
 
-    private final List<Integer> orders;
+    private final Order order;
 
-    public BasketServiceImpl() {
-        this.orders = new ArrayList<>();
+    public BasketServiceImpl(Order order) {
+        this.order = order;
     }
 
-    @Override
     public boolean addOrder(List<Integer> id) {
-        return orders.addAll(id);
+        return order.addOrder(id);
     }
 
-    @Override
-    public List<Integer> getOrder() {
-        return Collections.unmodifiableList(orders);
+    public Collection<Integer> getOrder() {
+        return order.getOrder();
     }
-
 }
