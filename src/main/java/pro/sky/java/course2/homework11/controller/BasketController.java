@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.java.course2.homework11.service.BasketService;
 
+import java.util.Collection;
 import java.util.List;
 
 @RequestMapping("/order")
@@ -22,13 +23,13 @@ public class BasketController {
 
     //localhost:8080/store/order/add?id=122
     @GetMapping("/add")
-    boolean addOrder(@RequestParam("id") String id) {
+    boolean addOrder(@RequestParam List<Integer> id) {
         return basketService.addOrder(id);
     }
 
     //localhost:8080/store/order/get
     @GetMapping("/get")
-    public List<String> getEmployees() {
+    public Collection<Integer> getOrder() {
         return basketService.getOrder();
     }
 

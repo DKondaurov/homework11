@@ -1,18 +1,14 @@
 package pro.sky.java.course2.homework11.data;
 
 
+import java.util.List;
 import java.util.Objects;
 
 public class Order {
 
-    private final String id;
+    private List<Integer> id;
 
-
-    public Order(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
+    public List<Integer> getId() {
         return id;
     }
 
@@ -28,10 +24,5 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return id;
     }
 }

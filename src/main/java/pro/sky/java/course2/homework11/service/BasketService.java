@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface BasketService {
 
-    boolean addOrder(String id);
+    List<Integer> getOrder();
 
-    List<String> getOrder();
+    boolean addOrder(List<Integer> id);
 }
