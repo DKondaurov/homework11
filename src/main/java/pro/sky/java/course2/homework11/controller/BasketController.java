@@ -9,15 +9,14 @@ import pro.sky.java.course2.homework11.service.BasketService;
 import java.util.Collection;
 import java.util.List;
 
-@RequestMapping("/order")
 @RestController
-
+@RequestMapping("/order")
 public class BasketController {
 
     private final BasketService basketService;
 
-    public BasketController(BasketService basketServiceImpl) {
-        this.basketService = basketServiceImpl;
+    public BasketController(BasketService basketService) {
+        this.basketService = basketService;
     }
 
 

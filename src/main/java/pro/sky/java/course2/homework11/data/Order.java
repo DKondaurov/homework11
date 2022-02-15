@@ -1,28 +1,22 @@
 package pro.sky.java.course2.homework11.data;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class Order {
+    private final List<Integer> order;
 
-    private List<Integer> id;
-
-    public List<Integer> getId() {
-        return id;
+    public Order() {
+        this.order = new ArrayList<>();
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return Objects.equals(id, order.id);
+    public boolean addOrder(List<Integer> id) {
+        return order.addAll(id);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public List<Integer> getOrder() {
+        return Collections.unmodifiableList(order);
     }
 }
